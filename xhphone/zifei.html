@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>资费说明--413选号网-北京手机号码。移动号码，手机靓号，手机卡，北京移动，全球通，动感地带，网上选号</title>
+		<meta name="description" content="北京号码之家销售北京手机号码，广东北京移动手机号码，手机靓号，手机卡,网上选号；网上购买北京移动全球通号码，神州行，动感地带，购买，入网，选号，提供手机号码测吉凶。号码之家-北京手机号码直销网站">
+		<meta name="keywords" content="北京手机靓号， 北京选号网，移动号码 ，手机靓号 ，手机卡，手机号码，网上选号，移动靓号 ，小灵通号码，购买，入网，选号，">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/phone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/publicAjax.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="headerpage"></div>
+		<div class="cont-box pad-box">
+			<ul class="consult-nav clearfix" id="consult-navHead">
+				<li data-oper='' class="choose">全部</li>
+				<li data-oper='0'>移动资费</li>
+				<li data-oper='1'>联通资费</li>
+				<li data-oper='2'>电信资费</li>
+			</ul>
+			<ul class="consult-nav-box">
+				<li>
+					<!--<ul class="zifei-table">
+						<li data-operator="" class="choose">全部</li>
+						<li data-operator="0">移动</li>
+						<li data-operator="1">联通</li>
+						<li data-operator="2">电信</li>
+					</ul>-->
+					<form action="" method="post">
+						<div>
+							<label for="">
+								<input type="radio" checked name="radio" value=''> 全部
+							</label>
+							<label for="">
+								<input type="radio" name="radio" value='市话多'> 市话多
+							</label>
+							<label for="">
+								<input type="radio" name="radio" value='长途多'> 长途多
+							</label>
+							<label for="">
+								<input type="radio" name="radio" value='短信多'> 短信多
+							</label>
+							<label for="">
+								<input type="radio" name="radio" value='联通资费'> 联通资费
+							</label>
+							<label for="">
+								<input type="radio" name="radio" value='电信资费'> 电信资费
+							</label>
+						</div>
+						<div class="tcButton">套餐匹配</div>
+					</form>
+				</li>
+			</ul>
+			<div class="mage-box">
+				
+			</div>
+		</div>
+		<div class="footerpage"></div>
+		<script type="text/javascript">
+			$(function() {
+				/*公共部分
+				 * 导航栏
+				 * footer CopyRight
+				 */
+				$(".headerpage").load("header.1.html?vid=0508");
+				$(".footerpage").load("footer.html?vid=0508");
+			});
+		</script>
+		<script>
+			$('#consult-navHead li').click(function(){
+				$(this).addClass('choose').siblings().removeClass('choose');
+				$('.tcButton').click();
+			})
+			/* ID */
+			$.getUrlParam = function(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null) return unescape(r[2]);
+				return null;
+			}
+		
+			$(function() {
+				var val = $.getUrlParam('val');
+				if (val != null && val != '') {
+					$("input[value='" + val + "']").prop("checked", true);
+					$('.tcButton').click();
+				}
+			})
+		
+			/* ajax */
+			$.ajax({
+				url: path+'/web/getMeals',
+				type: 'get',
+				dataType: 'json',
+				data: {
+					id: $.getUrlParam('id'),
+				},
+				success: function(result) {
+					for (var i in result.data) {
+						if (result.data[i].id == $.getUrlParam('id')) {
+							//var zifeiTitle = '<li class="choose">'+ result.data[i].title +'</li ><li class="choose"><a style="color:#FFC102" href="list.html">网上选号</a></li>'
+							var zifeiTitle = '<div class="zifei-more"><ul class="consult-nav zifei-nav clearfix"><li class="choose">' +
+								result.data[i].title +
+								'</li ><li class="choose"><a style="color:#fff" href="list.html">网上选号</a></li></ul><ul class="consult-nav-box consultBigBox"><li class="consult-box"><dl class="consult-box-font">' +
+								result.data[i].content +
+								'</dl></li></ul></div>'
+							$('.mage-box').append(zifeiTitle)
+							/* var zifeiContent = result.data[i].content
+							 $('.consult-box-font').append(zifeiContent)*/
+						}
+					}
+					//console.log(result.data)
+		
+				},
+				error: function(e) {
+					// console.log('失败')
+				}
+			});
+		
+			/* 套餐匹配 */
+			$('.tcButton').click(function() {
+				$.ajax({
+					url: path+'/web/getMeals',
+					type: 'get',
+					dataType: 'json',
+					data: {
+						//operator:$('#consult-navHead li').attr('data-oper'), // 营业商
+						operator: $('#consult-navHead li.choose').attr('data-oper'), // 营业商
+						tag: $('.consult-nav-box input:checked').val() // 市话多
+		
+					},
+					success: function(result) {
+						$('.zifei-more').remove();
+						for (var i in result.data) {
+							var zfBox = '<div class="zifei-more"><ul class="consult-nav zifei-nav clearfix"><li class="choose">' +
+								result.data[i].title +
+								'</li ><li class="choose"><a style="color:#FFC102" href="list.html">网上选号</a></li></ul><ul class="consult-nav-box consultBigBox"><li class="consult-box"><dl class="consult-box-font">' +
+								result.data[i].content +
+								'</dl></li></ul></div>'
+		
+							$('.mage-box').append(zfBox)
+						}
+						// console.log(result.data)
+		
+					},
+					error: function(e) {
+						// console.log('失败')
+					}
+				});
+			});
+		</script>
+		
+		
+	</body>
+</html>

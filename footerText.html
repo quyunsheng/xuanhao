@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="keywords" content="北京手机号,手机靓号,选号网,号码网,找号网,挑号网,搜号网手机号,手机号码,吉祥手机号" />
+		<meta name="description" content="手机号码专业选好，北京手机号码领先的专业销售网站。各类北京移动、北京联通、北京电信、等手机号码，手机靓号，网上选号，免费送货上门，实名入网过户，手机选号首选。" />
+		<title>413选号网，您的超值选择！选号网,手机号,手机号码,北京手机号,手机靓号,吉祥号,号码网,找号网,挑号网,搜号网</title>
+
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css" />
+
+	<body>
+		<!-- 公用头部 -->
+		<script type="text/javascript" src="header.js"></script>
+		<!-- 左侧 -->
+		<div>
+			<div class="content clearfix">
+				<div class="index-left">
+					<!-- 左侧导航 -->
+					<script type="text/javascript" src="left.js"></script>
+				</div>
+				<!-- 内容 -->
+				<div class="index-right">
+
+					<!-- 中间内容--------------------------------------------------- -->
+					<div class="consult-center"></div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- 底部 -->
+		<script type="text/javascript" src="footer.js"></script>
+
+	</body>
+</html>
+
+<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.z-pager.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/public.js" type="text/javascript"></script>
+<!-- 客户咨询 -->
+<script src="publicAjax.js"></script>
+
+<script>
+	(function($){
+		$.getUrlParam = function(name){
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if (r!=null) return unescape(r[2]); return null;
+		}
+	})(jQuery);
+	
+	$.ajax({
+		url: path+'/web/getLinks',
+		type: 'GET',
+		xhrFields: {withCredentials: true},// 支持跨域发送cookie
+		data:{
+			key:"guanyvLink"
+		},
+		dataType: 'JSON',
+		success: function (result) {
+			for(var i in result.data){
+				if(result.data[i].id == $.getUrlParam('id')){
+					var typeHtml ='<div>' + result.data[i].content + '</div>'
+					//console.log(result.data[i].content)
+					$('.consult-center').append(typeHtml)
+				}
+			}
+		},
+		error:function(){
+			console.log('error')
+		}
+	})
+	/* 购物指南 */
+	$.ajax({
+		url: path+'/web/getLinks',
+		type: 'GET',
+		xhrFields: {withCredentials: true},// 支持跨域发送cookie
+		data:{
+			key:"zhinanLink"
+		},
+		dataType: 'JSON',
+		success: function (result) {
+			for(var i in result.data){
+				if(result.data[i].id == $.getUrlParam('id')){
+					var typeHtml ='<div>' + result.data[i].content + '</div>'
+					console.log(result.data[i].content)
+					$('.consult-center').append(typeHtml)
+				}
+			}
+		},
+		error:function(){
+			console.log('error')
+		}
+	})
+
+</script>

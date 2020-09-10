@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="keywords" content="北京手机号,手机靓号,选号网,号码网,找号网,挑号网,搜号网手机号,手机号码,吉祥手机号" />
+		<meta name="description" content="手机号码专业选好，北京手机号码领先的专业销售网站。各类北京移动、北京联通、北京电信、等手机号码，手机靓号，网上选号，免费送货上门，实名入网过户，手机选号首选。" />
+		<title>413选号网，您的超值选择！选号网,手机号,手机号码,北京手机号,手机靓号,吉祥号,号码网,找号网,挑号网,搜号网</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
+	<link rel="stylesheet" type="text/css" href="css/banner.css" />
+
+	<body class="back-topBox">
+		<!-- 公用头部 -->
+		<script type="text/javascript" src="header.js"></script>
+		<!-- 左侧 -->
+		<div class="back-box">
+			<div class="content clearfix">
+				<div class="index-left">
+					<!-- 左侧导航 -->
+					<script type="text/javascript" src="left.js"></script>
+				</div>
+				<!-- 内容 -->
+				<div class="index-right">
+					<!-- 中间内容 -->
+					<div style="margin-left: 15px"><!-- class="index-right-center"-->
+						<!-- banner -->
+						<div class="head-banner">
+							<a class="arrow-list arrow-left" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+							<a class="arrow-list arrow-right" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<div class="swiper-container swiper-banner">
+								<div id="banners" class="swiper-wrapper">
+									<!-- 动态添加 -->
+
+								</div>
+								<div class="pagination"></div>
+							</div>
+						</div>
+						<!-- 北京资费 -->
+						<div>
+							<h1 class="content-title"><span>1F</span>北京资费</h1>
+							<div class="setMeal clearfix">
+								<div>
+									<span><input value="市话多" type="radio" name="radio">市话多</span>
+									<span><input value="长途多" type="radio" name="radio">长途多</span>
+									<span><input value="短信多" type="radio" name="radio">短信多</span>
+									<span><input value="经常出差" type="radio" name="radio">经常出差</span>
+									<span><input value="喜欢上网" type="radio" name="radio">喜欢上网</span>
+									<span><input value="话费少" type="radio" name="radio">话费少</span>
+									<span><input value="话费多" type="radio" name="radio" >话费多</span>
+									<span><input value="企业用户" type="radio" name="radio">企业用户</span>
+								</div>
+								<input id="taocan" onclick="zifei($('.setMeal input:checked').val())" type="submit" value="套餐匹配">
+								
+							</div>
+						</div>
+						<!-- 北京移动 -->
+						<div class="position-r">
+							<h1 class="content-title"><span>2F</span>北京移动</h1>
+							<ul class="phone-box-nav clearfix">
+								<li onclick="sale(0,1,'','')"  class="choose">特价促销</li>
+								<li onclick="sale(0,'',1,'')" >超值推荐</li>
+								<li onclick="sale(0,'','',1)" >超级靓号</li>
+							</ul>
+							<div class="change-box-0">
+								<ul class="phone-box phone-box-5 clearfix">
+									
+								</ul>
+								<ul class="phone-box phone-box-5 clearfix">
+									
+								</ul>
+								<ul class="phone-box phone-box-5 clearfix">
+									
+								</ul>
+							</div>
+
+						</div>
+						<!-- 北京联通 -->
+						<div class="position-r">
+							<h1 class="content-title"><span>3F</span>北京联通</h1>
+							<ul class="phone-box-nav clearfix">
+								<li onclick="sale(1,1,'','')"  class="choose">特价促销</li>
+								<li onclick="sale(1,'',1,'')" >超值推荐</li>
+								<li onclick="sale(1,'','',1)" >超级靓号</li>
+							</ul>
+							<div class="change-box-1">
+								<ul class="phone-box phone-box-5 clearfix">
+									
+								</ul>
+								<ul class="phone-box phone-box-5 clearfix">
+									
+								</ul>
+								<ul class="phone-box phone-box-5 clearfix">
+									
+								</ul>
+							</div>
+						
+						</div>
+						<!-- 北京电信 -->
+						<div class="position-r">
+							<h1 class="content-title"><span>4F</span>北京电信</h1>
+							<ul class="phone-box-nav clearfix">
+								<li onclick="sale(2,1,'','')"  class="choose">特价促销</li>
+								<li onclick="sale(2,'',1,'')" >超值推荐</li>
+								<li onclick="sale(2,'','',1)" >超级靓号</li>
+							</ul>
+							<div class="change-box-2">
+								<ul class="phone-box phone-box-5 clearfix">
+									
+								</ul>
+								<ul class="phone-box phone-box-5 clearfix">
+									
+								</ul>
+								<ul class="phone-box phone-box-5 clearfix">
+									
+								</ul>
+							</div>
+						
+						</div>
+					</div>
+					<!-- 右侧内容 -->
+					<!-- <div class="index-right-right">
+						<div class="new">
+							<div>
+								<h3>客户咨询</h3>
+								<span><a href="#">更多</a></span>
+							</div>
+							<ul>
+								<li>
+									<a href="#">
+										<i class="fa fa-angle-right fa-lg"></i>
+										<span>1349风水能量号解读之风水能量号解读之--数字“1"</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa fa-angle-right fa-lg"></i>
+										<span>1349风水能量号解读之风水能量号解读之--数字“1"</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa fa-angle-right fa-lg"></i>
+										<span>1349风水能量号解读之风水能量号解读之--数字“1"</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="new-img"></div>
+						<div class="new">
+							<div>
+								<h3>客户咨询</h3>
+								<span><a href="#">更多</a></span>
+							</div>
+							<ul>
+								<li>
+									<a href="#">
+										<i class="fa fa-angle-right fa-lg"></i>
+										<span>1349风水能量号解读之风水能量号解读之--数字“1"</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa fa-angle-right fa-lg"></i>
+										<span>1349风水能量号解读之风水能量号解读之--数字“1"</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa fa-angle-right fa-lg"></i>
+										<span>1349风水能量号解读之风水能量号解读之--数字“1"</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div> -->
+					<!--  -->
+				</div>
+
+			</div>
+		</div>
+
+		<!-- 底部 -->
+		<script type="text/javascript" src="footer.js"></script>
+	</body>
+</html>
+
+<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/idangerous.swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/banner.js" type="text/javascript" charset="utf-8"></script>
+<!-- 客户咨询 -->
+<script src="publicAjax.js"> </script>
+
+<script>
+	// 套餐匹配
+ 	function zifei(val){
+		val = escape(val)
+		window.location.href='zifei.html?val='+ val +''
+	}
+	
+	$(function() {
+		//$('.phone-box li h3').split(0)
+		var str = $('.phone-box li h3').text();
+		/* console.log(str)
+		console.log(str.split("2",2)) */
+		getBanners();
+		sale(0,1 ,'','');
+		sale(1,1,'','');
+		sale(2,1,'','');
+	})
+
+	$('.phone-box li>div:first-child h3').each(function() {
+		var str = $(this).text();
+		var h3Html = str.substring(0, 3) + "<span class='phone-h3-color'>" + str.substring(3, 7) + "</span>" + str.substring(
+			7, 11);
+		$(this).html(h3Html);
+		//console.log(str)
+	})
+
+	$('.phone-box-nav li').click(function() {
+		$(this).addClass('choose').siblings().removeClass('choose')
+		$('.phone-box').eq($(this).index()).css('display', 'block').siblings().css('display', 'none')
+	})
+
+	//nav 选中
+    $('.head-nav ul li').eq(0).addClass('choose');
+</script>
+<script>
+
+	function getBanners() {
+		var imgPath = path+ '/upload/images/';
+		// banner
+		$.ajax({
+			url: path+ '/web/getLinks',
+			// url: 'http://192.168.3.5:8080/xuanhao/web/getLinks',
+			type: 'GET',
+			dataType: 'JSON',
+			data: {
+				key: 'bannerLink'
+			},
+			success: function(result) {
+								/*
+				<div class="swiper-slide">
+					<a href="" style="background: url(../img/banner1.jpg) center center no-repeat;"></a>
+				</div>
+				*/
+				//console.log(result.data)
+				var banners = $('#banners');
+				for (i in result.data) {
+					var bannerChild = '<div class="swiper-slide">\
+										<a href="" style="background: url(' + imgPath + result.data[i].banner + ') top center no-repeat;background-size:100% 490px;"></a>\
+									</div>';
+					banners.append(bannerChild);
+				}
+
+                //banner
+                var mySwiper = new Swiper('.swiper-banner', {
+                    autoplay: 2000,
+                    pagination: '.pagination',
+                    loop: true,
+                    grabCursor: true,
+                    paginationClickable: true,
+                    //用户操作swiper之后，是否禁止autoplay.默认为true：停止。
+                    autoplayDisableOnInteraction: false,
+                    //拖动释放时不会输出信息，阻止click冒泡。拖动Swiper时阻止click事件。
+                    preventLinksPropagation: true
+                });
+                $('.arrow-left').on('click', function(e) {
+                    e.preventDefault()
+                    mySwiper.swipePrev()
+                });
+                $('.arrow-right').on('click', function(e) {
+                    e.preventDefault()
+                    mySwiper.swipeNext()
+                });
+			},
+			error: function(e) {
+				console.log('失败')
+			}
+		})
+	}
+	
+	/**
+	 * 
+	 * @param {int} operator 运营商运营商 (0=移动, 1=联通, 2=电信, 全部为空)
+	 * @param {int} sale 特价促销 (促销=1)  
+	 * @param {int} recommend 超值推荐 (推荐=1)  
+	 * @param {int} beauty 超级靓号 (靓号=1)
+	 * 
+	 */
+
+	function sale(operator,sale,recommend,beauty){
+		
+		$.ajax({
+			url:path+'/web/getPhones',
+			type: 'GET',
+			dataType: 'JSON',
+			data: {
+				//key: 'bannerLink'
+				operator:operator,
+				sale:sale,
+				recommend:recommend,
+				beauty:beauty
+			},
+			success: function(result) {
+				//console.log(result)
+				$('.change-box-' + operator + ' .phone-box').html('')
+				console.log(result.data)
+				for(i in result.data.list){
+					if(result.data.list[i].price>=1){
+					var saleBox = '<li><div><h3>' + result.data.list[i].phoneNum + '</h3><span>北京移动</span><p><span>￥' + result.data.list[i].price +
+						'</span></p></div><div><h3>' + result.data.list[i].phoneNum +
+						'</h3><a class="yu" href="yu.html?id=' + result.data.list[i].id + '">预约</a><a class="shou" onclick="collect(\'' +
+						result.data.list[i].id + '\')">收藏</a></div></li>'
+					$('.change-box-' + operator + ' .phone-box').append(saleBox)
+					}else{
+						var saleBox = '<li><div><h3>' + result.data.list[i].phoneNum + '</h3><span>北京移动</span><p><span>面议</span></p></div><div><h3>' + result.data.list[i].phoneNum +
+							'</h3><a class="yu" href="yu.html?id=' + result.data.list[i].id + '">预约</a><a class="shou" onclick="collect(\'' +
+							result.data.list[i].id + '\')">收藏</a></div></li>'
+						$('.change-box-' + operator + ' .phone-box').append(saleBox)
+					}
+				}
+				
+				
+			}
+		
+		})
+	}
+	
+</script>

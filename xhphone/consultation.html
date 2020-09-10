@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>413选号网-北京手机号码。移动号码，手机靓号，手机卡，北京移动，全球通，动感地带，网上选号</title>
+		<meta name="description" content="北京号码之家销售北京手机号码，广东北京移动手机号码，手机靓号，手机卡,网上选号；网上购买北京移动全球通号码，神州行，动感地带，购买，入网，选号，提供手机号码测吉凶。号码之家-北京手机号码直销网站">
+		<meta name="keywords" content="北京手机靓号， 北京选号网，移动号码 ，手机靓号 ，手机卡，手机号码，网上选号，移动靓号 ，小灵通号码，购买，入网，选号，">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/phone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/publicAjax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.z-pager.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jsmodern-1.1.1.min.js"></script>
+	</head>
+	<body>
+		<div class="headerpage"></div>
+		<div class="cont-box pad-box">
+			<ul class="consult-nav clearfix">
+				<li data-operator='' onclick="fulshZifei('')" class="choose">全部资费</li>
+				<li data-operator='0' onclick="fulshZifei(0)">移动资费</li>
+				<li data-operator='1' onclick="fulshZifei(1)">联通资费</li>
+				<li data-operator='2' onclick="fulshZifei(2)">电信资费</li>
+			</ul>
+			<!-- <ul class="consult-nav-box">
+				<li>
+					<form action="" method="post">
+						<div>
+							<label for="">
+								<input type="checkbox"> 市话多
+							</label>
+							<label for="">
+								<input type="checkbox"> 长途多
+							</label>
+							<label for="">
+								<input type="checkbox"> 短信多
+							</label>
+							<label for="">
+								<input type="checkbox"> 联通资费
+							</label>
+							<label for="">
+								<input type="checkbox"> 电信资费
+							</label>
+						</div>
+						<button>套餐匹配</button>
+					</form>
+				</li>
+			</ul>
+			<div class="share box">
+				<p>分享手机资费到:</p>
+				<div id="share-qrcode" title="二维码分享"></div> 
+				<div id="share-douban" title="豆瓣分享"></div>
+				<div id="share-qzone" title="QQ空间分享"></div>
+				<div id="share-sina" title="新浪微博分享"></div>
+				<div id="share-qq" title="QQ好友分享"></div>
+			</div> -->
+			<div class="consult-table-box">
+				<table class="consult-table" border="" cellspacing="" cellpadding="">
+					<!--
+					<tr>
+						
+						<td>移动</td>
+						<td>移动4G套餐</td>
+						<td><a href="#">移动4G飞享套餐</a></td>
+						<td>74333</td>
+						<td><a href="#">网上选号</a></td>
+					</tr>
+					-->
+
+				</table>
+			</div>
+
+		</div>
+		<div class="footerpage"></div>
+		<script type="text/javascript">
+			$(function() {
+				/*公共部分
+				 * 导航栏
+				 * footer CopyRight
+				 */
+				$(".headerpage").load("header.1.html?vid=0508");
+				$(".footerpage").load("footer.html?vid=0508");
+			});
+		</script>
+		<script>
+			function fulshZifei(operator) {
+				$.ajax({
+					url: path + '/web/getMeals',
+					type: 'get',
+					dataType: 'json',
+					data: {
+						pageSize: 5,
+						operator: operator
+					},
+					success: function(result) {
+						// var tableTitle = '<tr><th>运营商</th><th>品牌</th><th>套餐名称</th><th>浏览量</th><th>网上选号</th></tr>'
+						// $('.consult-table').html('').append(tableTitle)
+						$('.consult-table').html('')
+						for (i in result.data) {
+							addHtml =
+								'<tr style="background:#f1f1f1;"><td>运营商</td><td colspan="2">' + result.data[i].operator + '</td></tr>' +
+								'<tr><td>品牌</td><td colspan="2">' + result.data[i].brand + '</td></tr>' +
+								'<tr><td style="min-width:1.6rem">套餐名称</td><td colspan="2"><a href="zifei.html?id=' + result.data[i].id +
+								'">' + result.data[i].title + '</a></td></tr>' +
+								'<tr><td>浏览量</td><td>' + result.data[i].hits + '</td><td><a href="list.html?navhead=1">网上选号</a></td></tr>';
+								$('.consult-table-box .consult-table').append(addHtml);
+						}
+					},
+					error: function(e) {
+						console.log(e)
+						console.log('失败')
+					}
+				})
+			}
+			//nav 选中
+			$('.head-nav ul li').eq(7).addClass('choose');
+			/* 切换 */
+			$('.consult-nav li').click(function() {
+				$(this).addClass('choose').siblings().removeClass('choose');
+			})
+
+			getUrlParam = function(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null) return unescape(r[2]);
+				return null;
+			}
+
+			function butChoose(thisNumber) {
+				if (getUrlParam('navzi') == thisNumber) {
+					$('.consult-nav li').addClass('choose').siblings().removeClass('choose');
+					$('.consult-nav li').eq(thisNumber).addClass('choose').siblings().removeClass('choose')
+					$('.consult-nav li').eq(thisNumber).click()
+
+				}
+			}
+			butChoose(getUrlParam('navzi'))
+
+
+			$('.phone-box li>div h3').each(function() {
+				var str = $(this).text();
+				var h3Html = str.substring(0, 3) + "<span style='color:red;'>" + str.substring(3, 7) + "</span>" + str.substring(
+					7, 11);
+				$(this).html(h3Html);
+				//console.log(str)
+			})
+
+			$(".number-selected div").mousemove(function() {
+				$(".number-selected div .number-selected-box").eq($(this).index()).css('display', 'block');
+			}).mouseout(function() {
+				$('.number-selected-box').css('display', 'none')
+			});
+
+			/*--------------*/
+			$('.number-layout .fa-th-large').click(function() {
+				$('.number-layout .fa-navicon').css('color', '#666');
+				$('.number-layout .fa-th-large').css('color', '#E4393C')
+				$('#listStyle-change').removeClass('phone-box-list').addClass('phone-box phone-box-5')
+			})
+			$('.number-layout .fa-navicon').click(function() {
+				$('.number-layout .fa-th-large').css('color', '#666')
+				$('.number-layout .fa-navicon').css('color', '#E4393C');
+				$('#listStyle-change').removeClass('phone-box phone-box-5').addClass('phone-box-list')
+			})
+
+			/* ----------------------- */
+
+
+
+
+
+			/* 分享 */
+			/* 	jsModern.share({
+					qrcode: "#share-qrcode",
+					douban: "#share-douban",
+					qzone: "#share-qzone",
+					sina: "#share-sina",
+					qq: "#share-qq"
+				});  
+			 */
+		</script>
+		<script type="text/javascript">
+			$("#pager").zPager({
+				totalData: 50,
+				htmlBox: $('#wraper'),
+				btnShow: true,
+				ajaxSetData: false
+			});
+
+			function currentPage(currentPage) {
+				/*
+					触发页码数位置： Page/js/jquery.z-pager.js 64行
+				*/
+				//console.log("当前页码数：" + currentPage);
+			}
+		</script>
+
+		<script type="text/javascript">
+			var need = null;
+			var needName = null
+			fulshZifei("");
+			// $('.consult-nav li').each(function(){
+
+			// 	$(this).click(function(){
+			// 		need = $(this).attr("data-operator")
+			// 		needName = $(this).text()
+			// 		console.log($(this).text())
+			// 		console.log(need)
+
+			// 		// consMessage('',needName,need)
+			// 	})
+
+			// })
+			$('.consult-nav li:first-child').click()
+
+			/* 	function consMessage(myPageSize,myTag,myoperator){
+					$.ajax({
+						url:path+'/web/getMeals',
+						type:'get',
+						dataType:'json',
+						data:{
+							pageSize:myPageSize,
+							tag:myTag,
+							operator:myoperator
+						},
+						success:function(result){
+							
+							var tableTitle = '<tr><th>运营商</th><th>品牌</th><th>套餐名称</th><th>浏览量</th><th>网上选号</th></tr>'
+							$('.consult-table').html('').append(tableTitle)
+							for( i in result.data){
+								addHtml = '<tr><td>'+ result.data[i].operator +'</td><td>'+ result.data[i].brand +'</td><td><a href="#">'+ result.data[i].title +'</a></td><td>74333</td><td><a href="#">网上选号</a></td></tr>'
+								$('.consult-table-box table').append(addHtml)
+							}
+							
+						},
+						error:function(e){
+							console.log(e)
+							console.log('失败')
+						}
+					})
+				}
+					 */
+		</script>
+
+
+
+	</body>
+</html>

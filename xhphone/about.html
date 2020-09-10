@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>413选号网-北京手机号码。移动号码，手机靓号，手机卡，北京移动，全球通，动感地带，网上选号</title>
+		<meta name="description" content="北京号码之家销售北京手机号码，广东北京移动手机号码，手机靓号，手机卡,网上选号；网上购买北京移动全球通号码，神州行，动感地带，购买，入网，选号，提供手机号码测吉凶。号码之家-北京手机号码直销网站">
+		<meta name="keywords" content="北京手机靓号， 北京选号网，移动号码 ，手机靓号 ，手机卡，手机号码，网上选号，移动靓号 ，小灵通号码，购买，入网，选号，">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css?vid=0508" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?vid=0508" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/phone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/publicAjax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.z-pager.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jsmodern-1.1.1.min.js"></script>
+	</head>
+	<body>
+		<div class="headerpage"></div>
+		<div class="cont-box pad-box">
+			<div class="consult-table-box">
+				<div class="consult-center"></div>
+			</div>
+			
+		</div>
+		<div class="footerpage"></div>
+		<script type="text/javascript">
+			$(function() {
+				/*公共部分
+				 * 导航栏
+				 * footer CopyRight
+				 */
+				$(".headerpage").load("header.1.html?vid=0508");
+				$(".footerpage").load("footer.html?vid=0508");
+			});
+		</script>
+		<script>
+			/* ID */
+		
+			$.ajax({
+				url: path+'/web/getLinks',
+				type: 'GET',
+				xhrFields: {withCredentials: true},// 支持跨域发送cookie
+				data:{
+					key:"guanyvLink"
+				},
+				dataType: 'JSON',
+				success: function (result) {
+					for(var i in result.data){
+						if(result.data[i].id == $.getUrlParam('id')){
+							var typeHtml ='<div>' + result.data[i].content + '</div>'
+							//console.log(result.data[i].content)
+							$('.consult-center').append(typeHtml)
+						}
+					}
+				},
+				error:function(){
+					console.log('error')
+				}
+			})
+		</script>
+		
+
+
+	</body>
+</html>

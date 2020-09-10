@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>预约选号--413选号网-北京手机号码。移动号码，手机靓号，手机卡，北京移动，全球通，动感地带，网上选号</title>
+		<meta name="description" content="北京号码之家销售北京手机号码，广东北京移动手机号码，手机靓号，手机卡,网上选号；网上购买北京移动全球通号码，神州行，动感地带，购买，入网，选号，提供手机号码测吉凶。号码之家-北京手机号码直销网站">
+		<meta name="keywords" content="北京手机靓号， 北京选号网，移动号码 ，手机靓号 ，手机卡，手机号码，网上选号，移动靓号 ，小灵通号码，购买，入网，选号，">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
+		<link rel="stylesheet" type="text/css" href="css/banner.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/phone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/publicAjax.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="headerpage"></div>
+		<div class="cont-box pad-box">
+			<ul class="consult-nav clearfix" id="yu-title">
+					<li class="choose">注意事项：</li>
+				</ul>
+				<ul class="consult-nav-box consultBigBox">
+					<li class="consult-box">
+						<dl class="consult-box-font">
+							<dt>详细介绍：</dt>
+							<dd>1、预约不需要在线支付！</dd>
+							<dd>2、预约成功后，客服首先核实号码，然后确定是否交易。</dd>
+							<dd>3、用户可以随时取消订单,不承担任何费用！</dd>
+							<!-- <dd id="yu-details"></dd> -->
+							<dd>4、根据国家工信部相关规定，所有手机号码销售都需要提供身份证实名验证,到店自取。需要您上传身份证照片及在收货时查看身份证原件及收取复印件。国家工信部《电话用户真实身份信息登记规定》（工业和信息化部令第25号）、电话“黑卡”治理专项行动工作方案</dd>
+						</dl>
+					</li>
+				</ul>
+				<div class="yu-box">
+					<div class="yu-content">
+						<h3>预约号码</h3>
+						<div class="yu-table">
+							<dl>
+								<dt>订购号码</dt>
+								<dd id="yu-money" phone=""></dd>
+							</dl>
+							<!-- <dl>
+								<dt>注意事项</dt>
+								<dd id="yu-tc"></dd>
+							</dl> -->
+							<!-- <dl>
+								<dt>默认套餐</dt>
+								<dd>
+									<lable>
+										<input type="checkbox" checked="checked" name="" id="" value="" /><span id="yu-mrTc"></span>
+									</lable>
+								</dd>
+							</dl>
+							<dl>
+								<dt>付款方式</dt>
+								<dd id="payChexkbox">
+									<lable>
+										<input type="checkbox" checked="checked" data-heckbox="来店自取" name="testCheckBox" value="" />来店自取
+									</lable>
+									<lable>
+										<input type="checkbox" data-heckbox="支付宝付款" name="testCheckBox" value="" />支付宝付款
+									</lable>
+									<lable>
+										<input type="checkbox" data-heckbox="银行汇款" name="testCheckBox" value="" />银行汇款
+									</lable>
+								</dd>
+							</dl> -->
+							<!-- ---------------- -->
+							<dl>
+								<dt>客户姓名</dt>
+								<dd>
+									<input class="yu-inputName" name="realName" type="text" value="" placeholder="请输入您的姓名">
+									<span class="err"></span>
+								</dd>
+							</dl>
+							<dl>
+								<dt>联系电话</dt>
+								<dd>
+									<input class="yu-inputPhone" name="telephone" type="text" value="" placeholder="请入输联系电话">
+									<span class="err"></span>
+								</dd>
+							</dl>
+							<dl>
+								<dt>QQ</dt>
+								<dd>
+									<input class="yu-inputQQ" name="QQnum" type="text" value="" placeholder="请入输QQ">
+									<span class="err"></span>
+								</dd>
+							</dl>
+							<dl>
+								<dt>送货地址</dt>
+								<dd>
+									<input class="yu-inputAddress" name="address" type="text" value="" placeholder="请输入送货地址">
+									<span class="err"></span>
+								</dd>
+							</dl>
+							<dl>
+								<dt>建议意见</dt>
+								<dd>
+									<textarea class="yu-inputTextarea" name="comments" rows="10" cols="" placeholder="请输入您想反馈的意见或建议"></textarea>
+								</dd>
+							</dl>
+							<dl>
+								<dt>&nbsp;</dt>
+								<dd>
+									<!-- <lable>
+										<input type="checkbox" name="" id="" value="" />入网协议
+										<a href="">点击查看</a>
+									</lable>
+									<p>提交订单后，请及时进行活体验证，认证通过后，才安排号码办理事宜。 活体激活流程</p>
+									 -->
+									<button class="inpSubmit">立即预约号码</button>
+								</dd>
+							</dl>
+							<!-- ----------------- -->
+						</div>
+					</div>
+			
+				</div>
+			
+		</div>	
+		<div class="footerpage"></div>
+		<script type="text/javascript">
+			$(function() {
+				/*公共部分
+				 * 导航栏
+				 * footer CopyRight
+				 */
+				$(".headerpage").load("header.1.html?vid=0511");
+				$(".footerpage").load("footer.html?vid=0511");
+			});
+		</script>
+		<script>
+			/* 切换 */
+			$('.consult-nav li').click(function() {
+				//console.log('aaa')
+				$(this).addClass('choose').siblings().removeClass('choose');
+				$('.consultBigBox li').eq($(this).index()).css('display', 'block').siblings().css('display', 'none')
+			})
+		</script>
+		<script>
+			(function($) {
+				$.getUrlParam = function(name) {
+					var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+					var r = window.location.search.substr(1).match(reg);
+					if (r != null) return unescape(r[2]);
+					return null;
+				}
+			})(jQuery);
+		
+			/* 单选 */
+			$("input[name='testCheckBox']").on('click', function() {
+				// 取消全部checkbox的选中
+				$("input[name='testCheckBox']").prop("checked", false);
+				// 设置选中当前
+				$(this).prop("checked", true);
+			});
+			$(function() {
+				// $.ajax({
+				// 	url: path+'/web/detail',
+				// 	type: 'GET',
+				// 	dataType: 'JSON',
+				// 	data: {
+				// 		id: ,
+				// 		entity: "Phone"
+				// 	},
+				// 	success: function(result) {
+				// 		if (result.msg == "success") $("#yu-money").attr("phone", result.data.phoneNum);
+				// 		if (result.data.id == $.getUrlParam('id')) {
+				// 			/* 标题 */
+				// 			var yuTitle = '<li class="choose">北京移动&nbsp;' + result.data.phoneNum + '&nbsp;入网注意事项：</li>'
+				// 			$('#yu-title').append(yuTitle)
+				// 			/* 内容 */
+				// 			var yuDetails = '4、网站号码<span>' + result.data.phoneNum + '</span>&nbsp;为&nbsp;<span>' + result.data.mealTitle +
+				// 				'</span>'
+				// 			$('.consult-box-font #yu-details').append(yuDetails)
+				// 			/* 金额 */
+				// 			var peice = result.data.postage
+				// 			var fwPrice = result.data.price
+				// 			var price = peice.replace(/[^0-9]/g, ""); //price值为：200 
+				// 			var allPrice = Number(price) + Number(fwPrice)
+				// 			var yuMoney = '<span>' + result.data.phoneNum + '</span>&nbsp;服务费:&nbsp;<span>' + result.data.price +
+				// 				'元</span> + 话费:<span>' + result.data.postage + '</span> = 共:&nbsp;<span>' + allPrice +
+				// 				'</span>元'
+				// 			$('#yu-money').append(yuMoney)
+				// 			/* 注意事项 */
+				// 			var yuTc = '此号码为&nbsp;<span>' + result.data.mealTitle + '</span>，<span>' + result.data.postage +
+				// 				'</span>&nbsp;收到卡激活后联系客服充值话费。未开通之前不要做任何宣传。'
+				// 			$('#yu-tc').append(yuTc)
+				// 			/* 套餐 */
+				// 			var yuMrTc = result.data.mealTitle
+				// 			$('#yu-mrTc').append(yuMrTc)
+				// 		}
+		
+				// 	},
+				// 	error: function() {
+				// 		console.log("失败")
+				// 	}
+		
+				// })
+				
+				var ids = $.getUrlParam("id").split(",");
+				for (i in ids) {
+					detailPhone(ids[i]);
+				}
+				
+				
+				function detailPhone(id) {
+					$.ajax({
+						url: path+'/web/detail',
+						type: 'GET',
+						dataType: 'JSON',
+						data: {
+							id: id,
+							entity: "Phone"
+						},
+						success: function(result) {
+							console.log(result.data)
+							if (result.msg == "success") $("#yu-money").attr("phone", result.data.phoneNum);
+							/* if (result.data.id == $.getUrlParam('id')) { */
+								
+								/* 内容 */
+								/* var yuDetails = '4、网站号码<span>' + result.data.phoneNum + '</span>&nbsp;为&nbsp;<span>' + result.data.mealTitle +
+									'</span>'
+								$('.consult-box-font #yu-details').append(yuDetails) */
+								/* 金额 */
+								$('#yu-money').html('')
+								var peice = result.data.postage
+								var fwPrice = result.data.price
+								var price = peice
+								var allPrice =price
+								var yuMoney = '<span>' + meihua(result.data.phoneNum) + '&nbsp;&nbsp;<b>'+ onOperator(result.data.operator) +'</b></span>&nbsp;总费用:&nbsp;<span>' + result.data.price +
+									'元<br/>'
+								$('#yu-money').append(yuMoney)
+								/* 注意事项 */
+								/* var yuTc = '此号码为&nbsp;<span>' + result.data.mealTitle + '</span>，<span>' + result.data.postage +
+									'</span>&nbsp;收到卡激活后联系客服充值话费。未开通之前不要做任何宣传。'
+								$('#yu-tc').append(yuTc) */
+								/* 套餐 */
+								var yuMrTc = result.data.mealTitle
+								$('#yu-mrTc').append(yuMrTc)
+							//}
+		
+						},
+						error: function() {
+							console.log("失败")
+						}
+					});
+				}
+				
+				/* 点击提交 */
+				$('.inpSubmit').click(function() {
+					var ids = $.getUrlParam('id').split(",");
+					for (var i = 0; i < ids.length; i++) {
+						saveOrder(ids[i]);
+					}
+				})
+				function onOperator(operator) {
+					return operator==0?'移动':operator==1?'联通':operator==2?'电信':'';
+				}
+		function meihua(s){
+			return s.substring(0,3)+"-<b>"+s.substring(3,7)+"</b>-"+s.substring(7);
+		}
+				function saveOrder(phoneId) {
+					var json = JSON.stringify({
+						address: $('input[name="address"]').val(),
+						comments: $('.yu-inputTextarea').val(),
+						// msg: "string",
+						orderType: 2,
+						phoneId: phoneId,
+						phoneNum: $("#yu-money").attr("phone"),
+						qqnum: $("input[name='QQnum']").val(),
+						realName: $('.yu-inputName').val(),
+						telephone: $('.yu-inputPhone').val()
+					});
+		
+					$.ajax({
+						// url:'http://192.168.3.5:8080/xuanhao/web/orderSave',
+						url: path+'/web/orderSave',
+						type: 'POST',
+						dataType: 'JSON',
+						contentType: 'application/json;charset=utf-8',
+						data: json,
+						beforeSend: function(data) { //给后台得做判断
+							// 姓名验证
+							if ($('.yu-inputName').val() == '') {
+								$('.yu-inputName').siblings('span').text('× 名字为空');
+								$('.yu-inputName').val('');
+								return false;
+							}
+							// 验证手机号
+							if (!/^1[3456789]\d{9}$/.test($('.yu-inputPhone').val())) {
+								$('.yu-inputPhone').siblings('span').html("× 手机号码不正确");
+								$('.yu-inputPhone').val('');
+								return false;
+							}
+							// QQ验证
+							//console.log($('.yu-inputQQ').val())
+							if ($('.yu-inputQQ').val() == '') {
+								$('.yu-inputQQ').siblings('span').html("× QQ不正确");
+								$('.yu-inputQQ').val('');
+								return false;
+							}
+							// 地址验证
+							if ($('input[name="address"]').val() == '') {
+								$('input[name="address"]').siblings('span').html("× 请输入收货地址");
+								$('input[name="address"]').val('');
+								return false;
+							}
+						},
+						success: function(result) {
+							/*alert('提交成功')*/
+							window.history.go(-1)
+						},
+						error: function(e) {
+							//console.log(e)
+							console.log('提交失败')
+						}
+					});
+				}
+		
+			})
+		</script>
+		
+	</body>
+</html>

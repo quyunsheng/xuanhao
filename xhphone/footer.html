@@ -1,0 +1,61 @@
+<div class="footer-hui clearfix">
+	<div>
+		<span>北京挑号网服务中心：北京市西城区裕中西里30号楼 <br>
+			京ICP备12046762号-1 <br>
+			Copyright 2006-<span id="year"></span> Tiaohao.com <br>
+			北京挑号网-北京飞翔思拓科技有限公司旗下网站. <br>
+			法律顾问: 张党伟律师 北京市常鸿律师事务所</span>
+	</div>
+	<div class="">
+		<img src="img/footer-1.png?vid=0508" alt="">
+		<img src="img/footer-2.png?vid=0508" alt="">
+		<img src="img/footer-3.png?vid=0508" alt="">
+	</div>
+</div>
+<div class="new-foot">
+	<div class="new-foot-main">
+		<a href="index.html">
+			<span class="footImg1"></span>
+			<p>首页</p>
+		</a>
+	</div>
+	<div class="new-foot-main foot-sc">
+		<a href="star.html">
+			<span class="footImg2"></span>
+			<p>收藏</p>
+		</a>
+	</div>
+	<div class="new-foot-main">
+		<a href="javascript:dh();">
+			<span class="footImg3"></span>
+			<p>导航</p>
+		</a>
+	</div>
+	<div class="new-foot-main">
+		<a href="consult.html">
+			<span class="footImg4"></span>
+			<p>咨询</p>
+		</a>
+	</div>
+	<div class="new-foot-main">
+		<a href="tel:4008818765">
+			<span class="footImg5"></span>
+			<p>热线</p>
+		</a>
+	</div>
+</div>
+<script type="text/javascript">
+	var myDate = new Date();
+	var year = myDate.getFullYear();
+	$('#year').html(year);
+	$(document).ready(function() {
+	    $(".new-foot .new-foot-main a").each(function() {
+	        if($(this)[0].href == String(window.location)) {
+				$(this).parent(".new-foot-main").addClass("active").siblings().removeClass('active');
+	        }
+	    });
+	});
+	function dh(){
+		$(".collapse").show();
+	}
+</script>

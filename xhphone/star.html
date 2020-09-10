@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的收藏--413选号网-北京手机号码。移动号码，手机靓号，手机卡，北京移动，全球通，动感地带，网上选号</title>
+		<meta name="description" content="北京号码之家销售北京手机号码，广东北京移动手机号码，手机靓号，手机卡,网上选号；网上购买北京移动全球通号码，神州行，动感地带，购买，入网，选号，提供手机号码测吉凶。号码之家-北京手机号码直销网站">
+		<meta name="keywords" content="北京手机靓号， 北京选号网，移动号码 ，手机靓号 ，手机卡，手机号码，网上选号，移动靓号 ，小灵通号码，购买，入网，选号，">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css?vid=0508" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?vid=0508" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/phone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/publicAjax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.z-pager.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jsmodern-1.1.1.min.js"></script>
+	</head>
+	<body>
+		<div class="headerpage"></div>
+		<div class="cont-box pad-box">
+			<div class="consult-table-box">
+				<table class="consult-table">
+			
+					<!-- <tr>
+						<td>18611149844</td>
+						<td>联通</td>
+						<td>128</td>
+						<td>0</td>
+						<td>128</td>
+						<td>查询</td>
+						<td><button>订购</button></td>
+						<td>删除</td>
+					</tr> -->
+				</table>
+			</div>
+			
+		</div>
+		<div class="footerpage"></div>
+		<script type="text/javascript">
+			$(function() {
+				/*公共部分
+				 * 导航栏
+				 * footer CopyRight
+				 */
+				$(".headerpage").load("header.1.html?vid=0508");
+				$(".footerpage").load("footer.html?vid=0508");
+			});
+		</script>
+		<script>
+			/* ID */
+		
+			/* ajax */
+			$.ajax({
+				url: path+'/web/collects',
+				//url: 'http://192.168.3.5:8080/xuanhao/web/collects',
+				type: 'get',
+				dataType: 'json',
+				xhrFields: {
+					withCredentials: true
+				},
+				success: function(result) {
+					if (result.data == null) {
+						$('.consult-table').append('<tr><td style="text-align: center;" colspan="8"> 暂无收藏 </tr>')
+						return false;
+					}
+					
+					for (i in result.data) {
+						// var peice = result.data[i].postage
+						var fwPrice = result.data[i].price
+						// var price = peice.replace(/[^0-9]/g, ""); //price值为：200 
+						// var allPrice = Number(price) + Number(fwPrice)
+						var starList = 
+						'<tr><td>预选号码</td><td colspan="2">'+ result.data[i].phoneNum +'</td></tr>'+
+						'<tr><td>运营商</td><td colspan="2">'+ result.data[i].operator +'</td></tr>'+
+						'<tr><td>服务费</td><td colspan="2">'+ result.data[i].price +'</td></tr>'+
+						// '<tr><td>花费</td><td colspan="2">'+ result.data[i].postage +'</td></tr>'+
+						// '<tr><td>总费用</td><td colspan="2">'+ allPrice +'</td></tr>'+
+						'<tr><td>情侣号码</td><td colspan="2"></td></tr>'+
+						'<tr style="text-align:center;"><td><span class="star-buy"><a href="yu.html?id='+ result.data[i].id +'">订购</a></span></td><td><span onclick="delCollect(this, '+ result.data[i].id +')"  class="tableDelete">删除</span></td></tr>'
+						
+						// '<tr>\
+						// 					<td>'+ result.data[i].phoneNum +'</td>\
+						// 					<td>联通</td>\
+						// 					<td>'+ result.data[i].price +'</td>\
+						// 					<td>'+ result.data[i].postage +'</td>\
+						// 					<td>'+ allPrice +'</td>\
+						// 					<td><a href="list.html">查询</a></td>\
+						// 					<td><button><a href="yu.html?id='+ result.data[i].id +'">订购</a></button></td>\
+						// 					<td onclick="delCollect(this, '+ result.data[i].id +')"  class="tableDelete">删除</td>\
+						// 				</tr>';
+					}
+					$('.consult-table').append(starList)
+				},
+				error: function(e) {
+					console.log('error')
+				}
+			})
+			// $('.head-nav ul li').eq(1).addClass('choose');
+			/* 删除 */
+			function delCollect(thiz, id) {
+				$.ajax({
+					url: path+'/web/removeCollect',
+					//url: 'http://192.168.3.5:8080/xuanhao/web/collects',
+					type: 'POST',
+					dataType: 'json',
+					xhrFields: {
+						withCredentials: true
+					},
+					header: 'Accept: application/json',
+					data: {
+						id: id
+					},
+					success: function(result) {
+						$(thiz).parent().remove();
+						console.log($("table tr").length)
+						if ($("table tr").length <= 1)
+							$('.consult-table').append('<tr><td style="text-align: center;" colspan="8"> 暂无收藏 </tr>')
+					},
+					error: function(error) {
+						console.log('error')
+					}
+				})
+			}
+		</script>
+		
+
+
+	</body>
+</html>

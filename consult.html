@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="keywords" content="北京手机号,手机靓号,选号网,号码网,找号网,挑号网,搜号网手机号,手机号码,吉祥手机号" />
+		<meta name="description" content="手机号码专业选好，北京手机号码领先的专业销售网站。各类北京移动、北京联通、北京电信、等手机号码，手机靓号，网上选号，免费送货上门，实名入网过户，手机选号首选。" />
+		<title>413选号网，您的超值选择！选号网,手机号,手机号码,北京手机号,手机靓号,吉祥号,号码网,找号网,挑号网,搜号网</title>
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css"/>
+
+	<body>
+		<!-- 公用头部 -->
+		<script type="text/javascript" src="header.js"></script>
+		<!-- 左侧 -->
+		<div>
+			<div class="content clearfix">
+				<div class="index-left">
+					<!-- 左侧导航 -->
+					<script type="text/javascript" src="left.js"></script>
+				</div>
+				<!-- 内容 -->
+				<div class="index-right">
+					<!-- 中间内容--------------------------------------------------- -->
+					<!-- <div class="list-box " >
+						<div class="consult">
+							
+						</div>
+						
+					</div> -->
+					<div class="consult-center">
+						<ul class="consult-nav clearfix">
+							<li class="choose">北京移动网上营业厅</li>
+							<li>客服原则</li>
+						</ul>
+						<ul class="consult-nav-box consultBigBox">
+							<li class="consult-box">
+								<dl class="consult-box-font">
+									<dt>号码之家建议：</dt>
+									<dd>1、到有信誉的地方办理手机号码,就不会有这么多问题和求助了</dd>
+									<dd>2、不管是不是在我们这办理的手机号码，当您遇到问题都可以在此求助，我们会尽我们的能力给您建议和指导的!</dd>
+								</dl>
+							</li>
+							<!-- 客服原则 -->
+							<li class="promise">
+								<dl>
+									<dt>号码之家的客服承诺</dt>
+									<dd>
+										<p>号码之家北京移动服务中心创建的目的是把移动业务和网站的优惠活动快速呈现给客户.我们的目标是给用户提供专业的售前咨询，方便快捷的选号平台，提供完善的售后服务。最后一项是我们工作的重点，也是难点。</p>
+										<p>为了解决好售后的问题，我们准备开设“问题投诉”栏目，为了让所有的用户能对我们进行监督，我们决定把所有用户碰见的问题和投诉全部显示出来，对此我们承诺：</p>
+										<p>
+											1：不对任何投诉帖子进行删除。<br/>
+											2：积极解决问题，绝不回避任何问题。
+										</p>
+										<p>这个想法已经酝酿很久了，但一直没有推出，难处每个人都可以理解，一旦推出，将会把我们所有的问题和弱点全部展现出来，可能会造成对我们造成毁灭性的打击。也许我们有点理想主义，做唐吉坷德也没什么。为了我们的梦想，为了我们的目标，我们决定还是推出这项功能。</p>
+										<p>前面有风险有困难，有狂风有暴雨，有风浪有暗礁...不管什么，我们决定起航了。让所有的问题来的更猛烈一点吧，我们决定和所有的用户站在一起，乘风破浪，克服困难，一起成长，共同前进！</p>
+										<div>
+											号码之家<br/>
+											于2006年7月1日
+										</div>
+									</dd>
+								</dl>
+							</li>
+							
+						</ul>
+						
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+	<!-- 底部 -->		
+	<script type="text/javascript" src="footer.js"></script>
+		
+		
+	</body>
+</html>
+
+<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.z-pager.js" type="text/javascript" charset="utf-8"></script>
+<!-- 客户咨询 -->
+<script src="publicAjax.js"></script>
+<script>
+	
+/* ID */
+(function($){
+	$.getUrlParam = function(name){
+		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if (r!=null) return unescape(r[2]); return null;
+	}
+})(jQuery);
+
+	
+ 	$('.phone-box li>div:first-child h3').each(function(){
+		var str = $(this).text();
+		var h3Html = str.substring(0, 3)+"<span class='phone-h3-color'>"+str.substring(3, 7)+"</span>"+str.substring(7, 11);
+		$(this).html(h3Html);
+		//console.log(str)
+	})
+	
+	$(".number-selected div").mousemove(function(){
+        $(".number-selected div .number-selected-box").eq($(this).index()).css('display','block');
+	}).mouseout(function(){
+        $('.number-selected-box').css('display','none')
+	});
+
+	/*--------------*/
+	$('.number-layout .fa-th-large').click(function(){
+		$('.number-layout .fa-navicon').css('color','#666');
+		$('.number-layout .fa-th-large').css('color','#E4393C')
+        $('#listStyle-change').removeClass('phone-box-list').addClass('phone-box phone-box-5')
+	})
+	$('.number-layout .fa-navicon').click(function(){
+		$('.number-layout .fa-th-large').css('color','#666')
+		$('.number-layout .fa-navicon').css('color','#E4393C');
+        $('#listStyle-change').removeClass('phone-box phone-box-5').addClass('phone-box-list')
+	})
+
+
+/* 切换 */
+$('.consult-nav li').click(function(){
+	$(this).addClass('choose').siblings().removeClass('choose');
+	$('.consultBigBox li').eq($(this).index()).css('display','block').siblings().css('display','none')
+})
+
+
+
+</script>
+
+<script>
+
+$(function(){
+	//alert(window.location.href); //地址
+	//alert($.getUrlParam('id')); // id 是多少
+	if ($.getUrlParam("id")) {
+		detail()
+	}else if($.getUrlParam("operator")){
+		getArticles($.getUrlParam("operator"))
+	}else{
+		getArticles('')
+	}
+	
+	
+	// 客服总数 web/getArticles
+
+
+function getArticles(operator,page=1){
+$.ajax({
+			url:path+'/web/getArticles',
+			type:'get',
+			dataType:'json',
+			data:{
+				operator:operator,
+				pageNo:page
+			},
+			success:function(result){
+				//console.log(result)
+				for(i in result.data){
+					var getArticles = '<div class="consult"><h1>'+ result.data[i].title +'</h1><p>'+ result.data[i].author +'&nbsp;|&nbsp;<span>'+ timestampToTime(result.data[i].createTime) +'</span></p><p>'+ result.data[i].quest +'</p><div class="reply"><span>选号之家：</span>'
+					+ result.data[i].reply +'</div></div>'
+					$('.consult-box').append(getArticles)
+				}
+
+			
+			},
+			error:function(){
+				console.log("失败")
+			}
+			
+		})
+		// 时间戳转换为日期
+		function timestampToTime(timestamp) {
+			// var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+			var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+			Y = date.getFullYear() + '-';
+			M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+			D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
+			h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()) + ':';
+			m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()) + ':';
+			s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
+			return Y + M + D + h + m + s;
+		}
+}
+
+
+function detail(){
+	$.ajax({
+		url:path+'/web/detail',
+		type:'get',
+		dataType:'json',
+		data:{
+			id:$.getUrlParam('id'),
+			entity:"Article"
+			
+		},
+		success:function(result){
+			//console.log(result)
+			//console.log("成功")
+			/* var consultList = '<div class="consult"><h1>'+ result.data.title +'</h1><dl><dt>'+ result.data.author +'</dt><dd></dd></dl><p>'+ result.data.quest +'</p><div>'+ result.data.quest +'</div></div>' */
+			var consultList = '<div class="consult"><h1>'+ result.data.title +'</h1><p>'+ result.data.author +'&nbsp;|&nbsp;<span>'
+			+  timestampToTime(result.data.createTime) +'</span></p><p>'+ result.data.quest +'</p><div class="reply"><span>选号之家：</span>'
+			+ result.data.reply +'</div></div>'
+			$('.consult-box').append(consultList)
+			//page分页
+			 init && $("#pager").zPager({
+				totalData: result.totalRecord,
+				pageData: _pages,
+			});
+		},
+		error:function(){
+			console.log("失败")
+		}
+		
+
+	})
+}
+// 时间戳转换为日期
+function timestampToTime(timestamp) {
+	// var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+	var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+	Y = date.getFullYear() + '-';
+	M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+	D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
+	h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()) + ':';
+	m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()) + ':';
+	s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
+	return Y + M + D + h + m + s;
+}
+
+
+})
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

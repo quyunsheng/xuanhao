@@ -1,0 +1,69 @@
+input{margin:0;padding:0;border:none;outline: none;display: block;}
+body{font-family:"微软雅黑";margin:0;font-size: 14px;}
+a{text-decoration: none;display: block;color: #000;}
+h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,th,td,p{margin:0;padding:0;}
+li{list-style:none;}
+img{border:none;vertical-align: top;}
+.clearfix{*zoom:1;}
+.clearfix:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.fl{float: left;}
+.fr{float: right;}
+.position-r{ position:relative;}
+
+i{font-style:normal; }
+textarea{outline: none;padding: 0;margin: 0;}
+.show{
+	display: block;
+}
+.hidden{
+	display: none;
+}
+.border-line{
+	border-bottom:1px solid #e6e6e6 ;
+}
+.mt-20{ margin-top: 20px;}
+.m-b{margin-bottom: 50px;}
+.j-center{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+/* 公共属性 */
+
+
+.content{
+	width:1200px;
+	margin: 0 auto;
+}
+.back-topBox{
+	/*background: url("../img/back-top.png") no-repeat;*/
+	background: url("../img/back-back-star.png") repeat;
+	background-size: 30% auto;
+	background-position: left 0 top 0;
+}
+.border-bottom-red{
+	padding-top: 20px;
+	/*border-bottom: 2px solid #FFC102;*/
+}
+.back-box{
+	background-image: url("../img/back-back1.png"),url("../img/back-back2.png");
+	background-repeat:no-repeat;
+	background-size:30%,25%;
+	background-position: left 0 bottom 0, right 0 bottom 0;
+	padding-bottom: 30px;
+}
+input::-webkit-input-placeholder{
+    color: #999999;
+    font-size: 14px;
+    font-family:"微软雅黑";
+}
+
+textarea::-webkit-input-placeholder{
+    color: #999999;
+    font-size: 14px;
+    font-family:"微软雅黑";
+}

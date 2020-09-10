@@ -1,0 +1,98 @@
+/* 轮播图/登陆界面 */
+.swiper-banner{
+	width: 100%;
+}
+	
+.head-banner{
+	width: 100%;
+	border-radius:10px ;
+	height: 3.8rem;
+	overflow: hidden;
+	position: relative;
+	margin: 0px auto;
+	/*z-index: 19999;*/
+}
+.head-banner .swiper-banner a{
+	display: block;
+	width: 100%;
+	height: 3.55rem;
+	border-radius: 8px;
+}
+.head-banner .arrow-list i{
+	line-height: 50px;
+	font-size: 50px;
+	color: #fff;
+}
+ .head-banner .arrow-left,.head-banner .arrow-right{
+	    margin-top: -45px;
+	    display: block;
+	    width: 50px;
+	    height: 50px;
+	    padding: 20px 0;
+		text-align: center;
+	    filter: alpha(opacity=40);
+	    opacity: 0.4;
+		/*position: absolute;*/
+		top: 50%;
+		z-index: 2;
+}
+.head-banner .arrow-left{
+	left: 50%;
+	margin-left: -350px;
+}
+.head-banner .arrow-right{
+	right: 50%;
+	margin-right: -350px;
+}
+.head-banner .arrow-list:hover{
+	background:rgba(0,0,0,.5);
+	filter: alpha(opacity=100);
+	opacity: 1;
+} 
+.head-banner .pagination{
+	height: 10px;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	margin-left: -10px;
+	bottom: 0;
+	z-index: 1;
+}
+.head-banner .swiper-pagination-switch {
+	float: left;
+    margin-right: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+}
+.head-banner .swiper-active-switch {
+	width: 10px;
+	background: #ff4127;
+}
+
+.lb-bg{
+	width: 100%;
+	border-bottom-left-radius:10% ;
+	border-bottom-right-radius:10% ;
+	/* background-size:cover ; */
+	/* background: url(../img/banner-1.png) no-repeat; */
+}
+
+
+/* 图片轮播 */
+.img-lb{
+	width:100%;
+	border-left: #ddd 1px solid;
+	border-bottom: #ddd 1px solid;
+}
+.img-lb .swiper-slide{
+	padding: 0 10px;
+	box-sizing: border-box;
+	border-top: #ddd 1px solid;
+	border-right: #ddd 1px solid;
+}
+.img-lb .swiper-slide img{
+	height: 100%;
+}

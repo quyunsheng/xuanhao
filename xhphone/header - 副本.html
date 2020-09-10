@@ -1,0 +1,62 @@
+		<style>
+			.number{width:100%;background-color: #f5f5f5;padding-left: 10px;}
+			.position-find input{width:0.46rem !important}
+			.pfHead input{width:0.26rem !important}
+		</style>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html"><img src="img/LOGO-01.png" alt=""></a>
+		<span style="float:right;width:64vw;margin-right:7px;margin-top:12px;border-radius: 10px;padding:2px 2px 4px 10px;font-size: 14px;color: #000; background-color: #ffffff;">
+			<div class="position-find pfHead">
+				<form name="card">
+					<input maxlength="1" name="t1" id="t1" type="text" value="1" readonly="readonly">
+					<input onKeyUp="checkNum('2')"   maxlength="1" name="t2" id="t2" type="text">
+					<input onKeyUp="checkNum('3')"   maxlength="1" name="t3" id="t3" type="text">
+					- 
+					<input onKeyUp="checkNum('4')"   maxlength="1" name="t4" id="t4" type="text">
+					<input onKeyUp="checkNum('5')"   maxlength="1" name="t5" id="t5" type="text">
+					<input onKeyUp="checkNum('6')"   maxlength="1" name="t6" id="t6" type="text">
+					<input onKeyUp="checkNum('7')"   maxlength="1" name="t7" id="t7" type="text">
+					- 
+					<input onKeyUp="checkNum('8')"   maxlength="1" name="t8" id="t8" type="text">
+					<input onKeyUp="checkNum('9')"   maxlength="1" name="t9" id="t9" type="text">
+					<input onKeyUp="checkNum('10')"   maxlength="1" name="t10" id="t10" type="text">
+					<input onKeyUp="checkNum('11')"   maxlength="1" name="t11" id="t11" type="text">
+					<img onclick="doSearch();" src="img/find.png" alt="" style="width: 20px;">
+				</form>
+			</div>
+			<script>
+				function checkNum(n){
+					n=parseInt(n);
+					if(n>=2 && n<=11)
+					{
+						n++;
+						var ot="t"+n;
+						document.getElementById(ot).focus();
+						document.getElementById(ot).select();
+					}
+				}
+			</script>
+		</span>
+		
+	</div>
+	<div class="collapse navbar-collapse col-sm-7" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li><a href="index.html">首页</a></li>
+			<li><a href="list.html?navhead=1">移动选号</a></li>
+			<li><a href="list.html?type=1&navhead=2">联通选号</a></li>
+			<li><a href="list.html?type=2&navhead=3">电信选号</a></li>
+			<li><a href="400-choose.html">400选号</a></li>
+			<li><a href="recovery.html">靓号回收</a></li>
+			<li><a href="personal.html">号码定制</a></li>
+			<li><a href="consultation.html">资费中心</a></li>
+			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >客户咨询<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="consult.html?id=4">联通客服10010</a></li>
+					<li><a href="consult.html?id=3">电信客服10000</a></li>
+					<li><a href="consult.html?id=5">移动客服10086</a></li>
+			     </ul> 
+			</li>
+		</ul>
+	</div>
+</nav>
